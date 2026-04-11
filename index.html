@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Pet Tech | Os Melhores Acessórios Pet de 2026</title>
+    <meta name="description" content="Descubra os 5 melhores acessórios tecnológicos para o seu pet em 2026. Curadoria rigorosa e as melhores ofertas do Mercado Livre.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ffd700;
+            --primary-hover: #e6c200;
+            --text-dark: #1a1a1a;
+            --text-light: #555;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        /* Scroll trigger placeholder (simulated with standard animation for now) */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            height: 50px;
+            transition: var(--transition);
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-hover);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .guias-highlight {
+            color: #2dd4bf !important;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 2001;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        /* Menu active logic (hamburger to X) */
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+        /* Badge Styling */
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #2dd4bf;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(45, 212, 191, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eee;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .product-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .pros-cons {
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .pros-cons ul {
+            list-style: none;
+        }
+
+        .pros-cons li {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .pros-cons li.pro::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        .pros-cons li.con::before {
+            content: '✕';
+            position: absolute;
+            left: 0;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .cta-button {
+            display: block;
+            background-color: var(--primary-color);
+            color: var(--text-dark);
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 8px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-hover);
+            transform: scale(1.02);
+        }
+
+        /* Sobre Section */
+        .sobre-container {
+            background-color: var(--bg-light);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .sobre-container h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+        }
+
+        .sobre-container p {
+            font-size: 1.1rem;
+            max-width: 900px;
+            margin: 0 auto;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Footer / Author */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 60px 20px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .author-box img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .footer-logo img {
+            filter: brightness(0) invert(1);
+            height: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { padding: 60px 20px; }
+            .hero h1 { font-size: 2.2rem; }
+            
+            .menu-toggle { display: flex; }
+            
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(255, 255, 255, 0.98);
+                gap: 0;
+                justify-content: center;
+                align-items: center;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 2000;
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 15px 20px; /* Touch target height total > 48px */
+                font-size: 1.5rem;
+                min-height: 50px;
+            }
+
+            nav ul li a::after { display: none; }
+
+            .cta-button {
+                width: 100% !important;
+                font-weight: bold;
+            }
+
+            .products-grid { grid-template-columns: 1fr; }
+            .sobre-container { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#"><img src="logo.png" alt="Guia Pet Tech Logo"></a>
+            </div>
+            <nav>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="nav-list">
+                    <li><a href="#lista-produtos">Reviews</a></li>
+                    <li><a href="https://br.pinterest.com/pin/856317316694680548/" class="guias-highlight" target="_blank">Guias</a></li>
+                    <li><a href="#sobre-nos">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero fade-in">
+            <h1>Inovação e Bem-Estar para o seu Melhor Amigo</h1>
+            <p>Os 5 Melhores Acessórios Pet para Facilitar sua Vida em 2026. Nossa curadoria rigorosa traz o que há de mais avançado em tecnologia e performance.</p>
+        </section>
+
+        <section id="lista-produtos">
+            <h2 class="fade-in delay-1" style="text-align: center; margin-bottom: 40px;">Análises de Performance 2026</h2>
+            <div class="products-grid">
+                
+                <!-- Product 1 -->
+                <article class="product-card fade-in delay-1">
+                    <div class="product-image">
+                        <img src="fonte.png" alt="Fonte de Água Inteligente">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fonte de Água Inteligente</h3>
+                        <p class="product-desc">Hidratação contínua com filtragem tripla para saúde renal superior.</p>
+                        <div class="pros-cons">
+                            <ul>
+                                <li class="pro">Silenciosa e econômica</li>
+                                <li class="pro">Sensores de pureza em tempo real</li>
+                                <li class="con">Requer troca de filtro mensal</li>
+                            </ul>
+                        </div>
+                        <a href="https://meli.la/1tvHFVs" target="_blank" class="cta-button">Conferir Oferta no Mercado Livre</a>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="product-card fade-in delay-2">
+                    <span class="badge">⭐ MAIS VENDIDO</span>
+                    <div class="product-image">
+                        <img src="cama.png" alt="Cama Nuvem Ortopédica">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cama Nuvem Ortopédica</h3>
+                        <p class="product-desc">Redução de ansiedade e suporte articular com fibras TechSoft.</p>
+                        <div class="pros-cons">
+                            <ul>
+                                <li class="pro">Lavagem ultra-fácil na máquina</li>
+                                <li class="pro">Base antiderrapante e reforçada</li>
+                                <li class="con">Pode aquecer muito no verão</li>
+                            </ul>
+                        </div>
+                        <a href="https://meli.la/1JBNLej" target="_blank" class="cta-button">Conferir Oferta no Mercado Livre</a>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="product-card fade-in delay-3">
+                    <div class="product-image">
+                        <img src="tapete.png" alt="Tapete Higiênico Premium">
+                    </div>
+                    <div class="product-info">
+                        <h3>Tapete Higiênico Premium</h3>
+                        <p class="product-desc">Super absorção e controle de odor com tecnologia de gel polímero.</p>
+                        <div class="pros-cons">
+                            <ul>
+                                <li class="pro">Não vaza e seca em segundos</li>
+                                <li class="pro">Atrativo canino integrado</li>
+                                <li class="con">Custo unitário mais elevado</li>
+                            </ul>
+                        </div>
+                        <a href="https://meli.la/1MqfQtL" target="_blank" class="cta-button">Conferir Oferta no Mercado Livre</a>
+                    </div>
+                </article>
+
+                <!-- Product 4 -->
+                <article class="product-card fade-in delay-1">
+                    <div class="product-image">
+                        <img src="brinquedo.png" alt="Brinquedo Interativo Smart">
+                    </div>
+                    <div class="product-info">
+                        <h3>Brinquedo Interativo Smart</h3>
+                        <p class="product-desc">Estimulação mental e física com movimentos autônomos aleatórios.</p>
+                        <div class="pros-cons">
+                            <ul>
+                                <li class="pro">Bateria de longa duração (USB)</li>
+                                <li class="pro">Resistente a mordidas intensas</li>
+                                <li class="con">Ruído pode assustar pets tímidos</li>
+                            </ul>
+                        </div>
+                        <a href="https://meli.la/2GYQhkv" target="_blank" class="cta-button">Conferir Oferta no Mercado Livre</a>
+                    </div>
+                </article>
+
+                <!-- Product 5 -->
+                <article class="product-card fade-in delay-2">
+                    <div class="product-image">
+                        <img src="arranhador.png" alt="Arranhador Casa 2 em 1">
+                    </div>
+                    <div class="product-info">
+                        <h3>Arranhador Casa 2 em 1</h3>
+                        <p class="product-desc">Design ergonômico que protege móveis e oferece refúgio seguro.</p>
+                        <div class="pros-cons">
+                            <ul>
+                                <li class="pro">Material ecológico e durável</li>
+                                <li class="pro">Fácil montagem e estética moderna</li>
+                                <li class="con">Ocupa espaço considerável na sala</li>
+                            </ul>
+                        </div>
+                        <a href="https://meli.la/23aYvwL" target="_blank" class="cta-button">Conferir Oferta no Mercado Livre</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="sobre-nos" class="fade-in">
+            <div class="sobre-container">
+                <h2>Sobre o Guia Pet Tech</h2>
+                <p>O Guia Pet Tech nasceu da paixão por inovação e do compromisso com o bem-estar animal. Nossa missão é simplificar a vida dos donos de pets, trazendo uma curadoria rigorosa dos melhores acessórios tecnológicos e produtos de alta performance disponíveis no Mercado Livre. Não apenas listamos produtos; analisamos tendências e buscamos soluções que realmente transformam a rotina entre você e seu melhor amigo. Tecnologia, segurança e carinho em cada escolha.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="author-box">
+                <img src="foto-josue.jpg" alt="Josué - Fundador do Guia Pet Tech">
+                <div class="author-info">
+                    <h4>Josué</h4>
+                    <p>Especialista em Tecnologia e Vida Animal</p>
+                </div>
+            </div>
+            <div class="footer-logo">
+                <img src="logo.png" alt="Logo Footer">
+                <p style="font-size: 0.8rem; margin-top: 10px; color: #777;">&copy; 2026 Guia Pet Tech. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle logic
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        const navLinks = document.querySelectorAll('#nav-list li a');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navList.classList.toggle('active');
+            document.body.style.overflow = navList.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navList.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Subtle scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section, article, .sobre-container').forEach(el => {
+            el.classList.remove('fade-in'); // Reset to allow observer to trigger
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
