@@ -35,21 +35,6 @@
             overflow-x: hidden;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 0.8s ease forwards;
-        }
-
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.3s; }
-        .delay-3 { animation-delay: 0.4s; }
-
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -60,7 +45,7 @@
         header {
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -101,7 +86,6 @@
             font-weight: 600;
             font-size: 0.95rem;
             transition: var(--transition);
-            position: relative;
         }
 
         nav ul li a:hover {
@@ -128,10 +112,6 @@
             border-radius: 2px;
             transition: var(--transition);
         }
-
-        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
-        .menu-toggle.active span:nth-child(2) { opacity: 0; }
-        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
 
         /* Article Structure */
         .article-header {
@@ -225,11 +205,6 @@
             height: auto;
             aspect-ratio: 4/3;
             object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .review-item:hover .image-wrapper img {
-            transform: scale(1.03);
         }
 
         .description {
@@ -254,7 +229,6 @@
             margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 5px;
         }
 
         .pros h4 { color: var(--pro-color); }
@@ -267,12 +241,26 @@
 
         .pros-cons li {
             position: relative;
-            padding-left: 18px;
+            padding-left: 20px;
             margin-bottom: 6px;
         }
 
-        .pros li::before { content: "✓"; position: absolute; left: 0; color: var(--pro-color); font-weight: bold; }
-        .cons li::before { content: "×"; position: absolute; left: 0; color: var(--con-color); font-weight: bold; }
+        .pros li::before { 
+            content: "\2713"; 
+            position: absolute; 
+            left: 0; 
+            color: var(--pro-color); 
+            font-weight: bold; 
+        }
+        .cons li::before { 
+            content: "\00d7"; 
+            position: absolute; 
+            left: 0; 
+            color: var(--con-color); 
+            font-weight: bold; 
+            font-size: 1.1rem;
+            line-height: 0.9;
+        }
 
         /* CTA Button */
         .cta-button {
@@ -294,10 +282,9 @@
         .cta-button:hover {
             background: var(--primary-hover);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
         }
 
-        /* Winner Badge for Cama */
+        /* Winner Badge */
         .winner-overlay {
             position: absolute;
             top: 20px;
@@ -309,7 +296,6 @@
             font-weight: 800;
             font-size: 0.75rem;
             z-index: 10;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         /* Sobre Section */
@@ -323,11 +309,6 @@
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
-        }
-
-        .sobre-container h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
         }
 
         /* Footer */
@@ -359,14 +340,10 @@
             object-fit: cover;
         }
 
-        .author-info h4 { margin-bottom: 5px; }
-        .author-info p { font-size: 0.85rem; color: #999; }
-
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-container { padding: 0 10px; }
             nav ul {
-                display: flex;
+                display: none; /* Mobile menu logic handled via JS classes */
                 flex-direction: column;
                 position: fixed;
                 top: 0;
@@ -380,7 +357,7 @@
                 z-index: 2000;
             }
 
-            nav ul.active { right: 0; }
+            nav ul.active { display: flex; right: 0; }
             .menu-toggle { display: flex; }
             
             .main-title { font-size: 2rem; }
@@ -388,6 +365,15 @@
             .review-item { padding: 25px; }
             .pros-cons { grid-template-columns: 1fr; }
             .footer-content { justify-content: center; text-align: center; }
+        }
+
+        /* Safe Animations (Fade in on load only) */
+        @keyframes simpleFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: simpleFadeIn 1s ease forwards;
         }
     </style>
 </head>
@@ -425,7 +411,7 @@
         <div class="article-body">
             
             <!-- ITEM 1 -->
-            <section class="review-item is-winner fade-in delay-1" id="item-1">
+            <section class="review-item is-winner fade-in" id="item-1">
                 <div class="item-header">
                     <div class="rank-badge">🏆 Escolha do Editor #1</div>
                     <h3>1. Fonte de água para pets</h3>
@@ -466,7 +452,7 @@
             </section>
 
             <!-- ITEM 2 -->
-            <section class="review-item fade-in delay-2" id="item-2">
+            <section class="review-item fade-in" id="item-2">
                 <div class="winner-overlay">🔥 MAIS VENDIDO</div>
                 <div class="item-header">
                     <div class="rank-badge rank-normal">⭐ Mais Vendido</div>
@@ -508,7 +494,7 @@
             </section>
 
             <!-- ITEM 3 -->
-            <section class="review-item fade-in delay-3" id="item-3">
+            <section class="review-item fade-in" id="item-3">
                 <div class="item-header">
                     <div class="rank-badge rank-normal">✨ Praticidade</div>
                     <h3>3. Tapete higiênico premium</h3>
@@ -635,7 +621,7 @@
 
     <section id="sobre-nos" class="fade-in">
         <div class="container sobre-container">
-            <h2>Sobre o Guia Pet Tech</h2>
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">Sobre o Guia Pet Tech</h2>
             <p>O Guia Pet Tech nasceu da paixão por inovação e do compromisso com o bem-estar animal. Nossa missão é simplificar a vida dos donos de pets, trazendo uma curadoria rigorosa dos melhores acessórios tecnológicos e produtos de alta performance disponíveis no Mercado Livre. Não apenas listamos produtos; analisamos tendências e buscamos soluções que realmente transformam a rotina entre você e seu melhor amigo. Tecnologia, segurança e carinho em cada escolha.</p>
         </div>
     </section>
@@ -674,19 +660,6 @@
                 document.body.style.overflow = 'auto';
             });
         });
-
-        // Scroll reveal animation
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
