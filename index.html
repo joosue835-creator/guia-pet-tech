@@ -147,6 +147,48 @@
             visibility: visible;
         }
 
+        /* New Robust Mobile Menu Styling */
+        @media (max-width: 768px) {
+            #nav-list {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                max-width: 300px;
+                height: 100vh;
+                background: #ffffff;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+                justify-content: center;
+                align-items: center;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 3000;
+                gap: 50px;
+                opacity: 0;
+                visibility: hidden;
+                list-style: none;
+            }
+
+            #nav-list.active { 
+                right: 0; 
+                opacity: 1;
+                visibility: visible;
+            }
+
+            #nav-list li {
+                width: 100%;
+                text-align: center;
+            }
+
+            #nav-list li a {
+                font-size: 1.5rem;
+                display: block;
+                width: 100%;
+                padding: 15px;
+            }
+        }
+
         /* Article Structure */
         .article-header {
             padding: 60px 0 40px;
@@ -384,56 +426,43 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            nav ul {
-                display: flex;
-                flex-direction: column;
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 75%;
-                max-width: 300px;
-                height: 100vh;
-                background: #ffffff;
-                box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-                justify-content: center;
-                align-items: center;
-                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                z-index: 2000;
-                gap: 50px;
-                opacity: 0;
-                visibility: hidden;
-            }
-
-            nav ul.active { 
-                right: 0; 
-                opacity: 1;
-                visibility: visible;
-            }
-
-            nav ul li {
-                width: 100%;
-                text-align: center;
-            }
-
-            nav ul li a {
-                font-size: 1.5rem; /* Better mobile text size */
-                display: block;
-                width: 100%;
-                padding: 10px;
-            }
-            .menu-toggle { display: flex; }
-            
-            /* Ensure header is above overlay when menu is open */
-            body.menu-open header {
-                z-index: 3000;
-            }
-
-            .main-title { font-size: 2rem; }
-            .item-content { grid-template-columns: 1fr; gap: 30px; }
-            .review-item { padding: 25px; }
-            .pros-cons { grid-template-columns: 1fr; }
-            .footer-content { justify-content: center; text-align: center; }
             .cta-button { width: 100%; display: flex; }
+        }
+
+        /* Desktop Positioning for Relocated Menu */
+        @media (min-width: 769px) {
+            #nav-list {
+                position: fixed;
+                top: 25px;
+                z-index: 1001;
+                display: flex;
+                list-style: none;
+                gap: 30px;
+            }
+            
+            nav {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        /* Desktop: 769px to 1000px (standard tablet/small laptop) */
+        @media (min-width: 769px) and (max-width: 1000px) {
+            #nav-list {
+                right: 20px;
+            }
+        }
+        
+        /* Desktop: 1001px+ (large screens) */
+        @media (min-width: 1001px) {
+            #nav-list {
+                right: calc((100% - 1000px) / 2 + 20px);
+            }
+        }
+
+        /* Adjusted gap for nav-container on desktop */
+        .nav-container {
+            position: relative;
         }
 
         /* Safe Animations (Fade in on load only) */
@@ -461,11 +490,6 @@
                     <span></span>
                     <span></span>
                 </div>
-                <ul id="nav-list">
-                    <li><a href="#item-1">Reviews</a></li>
-                    <li><a href="#item-1" class="guias-highlight">Guias</a></li>
-                    <li><a href="#sobre-nos">Sobre</a></li>
-                </ul>
             </nav>
         </div>
     </header>
@@ -711,6 +735,12 @@
     </footer>
 
     <div class="mobile-overlay" id="overlay"></div>
+
+    <ul id="nav-list">
+        <li><a href="#item-1">Reviews</a></li>
+        <li><a href="#item-1" class="guias-highlight">Guias</a></li>
+        <li><a href="#sobre-nos">Sobre</a></li>
+    </ul>
 
     <script>
         // Mobile menu toggle logic
