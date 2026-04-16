@@ -102,97 +102,52 @@
             color: #2dd4bf !important;
         }
 
-        /* Mobile Menu */
-        .menu-toggle {
+        /* Back to Top Buttons */
+        .back-to-top {
             display: none;
-            flex-direction: column;
-            gap: 6px;
             cursor: pointer;
-            z-index: 2005;
+            transition: var(--transition);
+            background: none;
+            border: none;
             padding: 10px;
-            margin-right: -10px;
+            color: var(--text-dark);
+            z-index: 2005;
         }
 
-        .menu-toggle span {
-            width: 30px;
-            height: 3px;
-            background-color: var(--text-dark);
-            border-radius: 2px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* Hamburger to X Animation */
-        .menu-toggle.active span:nth-child(1) {
-            transform: translateY(9px) rotate(45deg);
-        }
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-            transform: translateX(10px);
-        }
-        .menu-toggle.active span:nth-child(3) {
-            transform: translateY(-9px) rotate(-45deg);
-        }
-
-        /* Mobile Overlay */
-        .mobile-overlay {
+        .floating-back-to-top {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(4px);
-            z-index: 1999;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #FF8000 0%, #E67300 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 2000;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
         }
 
-        .mobile-overlay.active {
+        .floating-back-to-top.show {
             opacity: 1;
             visibility: visible;
         }
 
-        /* New Robust Mobile Menu Styling */
+        .floating-back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(255,128,0,0.4);
+        }
+
         @media (max-width: 768px) {
-            #nav-list {
-                display: flex;
-                flex-direction: column;
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 75%;
-                max-width: 300px;
-                height: 100vh;
-                background: #ffffff;
-                box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-                justify-content: center;
-                align-items: center;
-                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                z-index: 3000;
-                gap: 50px;
-                opacity: 0;
-                visibility: hidden;
-                list-style: none;
-            }
-
-            #nav-list.active { 
-                right: 0; 
-                opacity: 1;
-                visibility: visible;
-            }
-
-            #nav-list li {
-                width: 100%;
-                text-align: center;
-            }
-
-            #nav-list li a {
-                font-size: 1.5rem;
-                display: block;
-                width: 100%;
-                padding: 15px;
-            }
+            .back-to-top { display: flex; }
+            #nav-list { display: none !important; }
         }
 
         /* Article Structure */
@@ -491,11 +446,9 @@
                 </a>
             </div>
             <nav>
-                <div class="menu-toggle" id="mobile-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <button class="back-to-top" id="header-top-btn" aria-label="Voltar ao topo">
+                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                </button>
             </nav>
         </div>
     </header>
@@ -740,34 +693,31 @@
         </div>
     </footer>
 
-    <div class="mobile-overlay" id="overlay"></div>
-
-    <ul id="nav-list">
-        <li><a href="#item-1">Reviews</a></li>
-        <li><a href="#item-1" class="guias-highlight">Guias</a></li>
-        <li><a href="#sobre-nos">Sobre</a></li>
-    </ul>
+    <button class="floating-back-to-top" id="floating-top-btn" aria-label="Voltar ao topo">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+    </button>
 
     <script>
-        // Mobile menu toggle logic
-        const menuToggle = document.getElementById('mobile-menu');
-        const navList = document.getElementById('nav-list');
-        const navLinks = document.querySelectorAll('#nav-list li a');
-        const overlay = document.getElementById('overlay');
+        const headerTopBtn = document.getElementById('header-top-btn');
+        const floatingTopBtn = document.getElementById('floating-top-btn');
 
-        const toggleMenu = () => {
-            menuToggle.classList.toggle('active');
-            navList.classList.toggle('active');
-            overlay.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
-            document.body.style.overflow = navList.classList.contains('active') ? 'hidden' : 'auto';
+        const scrollToTop = () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         };
 
-        menuToggle.addEventListener('click', toggleMenu);
-        overlay.addEventListener('click', toggleMenu);
+        headerTopBtn.addEventListener('click', scrollToTop);
+        floatingTopBtn.addEventListener('click', scrollToTop);
 
-        navLinks.forEach(link => {
-            link.addEventListener('click', toggleMenu);
+        // Show/hide floating button on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                floatingTopBtn.classList.add('show');
+            } else {
+                floatingTopBtn.classList.remove('show');
+            }
         });
     </script>
 </body>
