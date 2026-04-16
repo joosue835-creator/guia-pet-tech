@@ -268,20 +268,27 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background: var(--primary-color);
-            color: var(--text-dark);
+            background: #FF8000;
+            color: #FFFFFF;
             text-decoration: none;
             font-weight: 800;
             padding: 18px;
             border-radius: 10px;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             width: 100%;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .cta-button:hover {
-            background: var(--primary-hover);
-            transform: translateY(-2px);
+            background: #E67300;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(255, 128, 0, 0.3);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(255, 128, 0, 0.2);
         }
 
         /* Winner Badge */
@@ -394,7 +401,7 @@
                 </div>
                 <ul id="nav-list">
                     <li><a href="#item-1">Reviews</a></li>
-                    <li><a href="https://br.pinterest.com/pin/856317316694680548/" class="guias-highlight" target="_blank">Guias</a></li>
+                    <li><a href="/guias" class="guias-highlight">Guias</a></li>
                     <li><a href="#sobre-nos">Sobre</a></li>
                 </ul>
             </nav>
@@ -419,7 +426,7 @@
                 
                 <div class="item-content">
                     <div class="image-wrapper">
-                        <img src="fonte.png" alt="Fonte de água para pets">
+                        <img src="fonte.png" alt="Fonte de água para pets" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=500&q=60';">
                     </div>
                     
                     <div class="details-wrapper">
@@ -461,7 +468,7 @@
                 
                 <div class="item-content">
                     <div class="image-wrapper">
-                        <img src="cama.png" alt="Cama nuvem para cachorro ou gato">
+                        <img src="cama.png" alt="Cama nuvem para cachorro ou gato" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=500&q=80';">
                     </div>
                     
                     <div class="details-wrapper">
@@ -502,7 +509,7 @@
                 
                 <div class="item-content">
                     <div class="image-wrapper">
-                        <img src="tapete.png" alt="Tapete higiênico premium">
+                        <img src="tapete.png" alt="Tapete higiênico premium" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=500&q=60';">
                     </div>
                     
                     <div class="details-wrapper">
@@ -543,7 +550,7 @@
                 
                 <div class="item-content">
                     <div class="image-wrapper">
-                        <img src="brinquedo.png" alt="Brinquedo interativo para gatos">
+                        <img src="brinquedo.png" alt="Brinquedo interativo para gatos" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1615266895738-11f1371cd7e5?auto=format&fit=crop&w=500&q=60';">
                     </div>
                     
                     <div class="details-wrapper">
@@ -584,7 +591,7 @@
                 
                 <div class="item-content">
                     <div class="image-wrapper">
-                        <img src="arranhador.png" alt="Arranhador casa para gatos">
+                        <img src="arranhador.png" alt="Arranhador casa para gatos" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?auto=format&fit=crop&w=500&q=60';">
                     </div>
                     
                     <div class="details-wrapper">
