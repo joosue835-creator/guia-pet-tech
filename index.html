@@ -423,6 +423,11 @@
             }
             .menu-toggle { display: flex; }
             
+            /* Ensure header is above overlay when menu is open */
+            body.menu-open header {
+                z-index: 3000;
+            }
+
             .main-title { font-size: 2rem; }
             .item-content { grid-template-columns: 1fr; gap: 30px; }
             .review-item { padding: 25px; }
@@ -718,6 +723,7 @@
             menuToggle.classList.toggle('active');
             navList.classList.toggle('active');
             overlay.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
             document.body.style.overflow = navList.classList.contains('active') ? 'hidden' : 'auto';
         };
 
