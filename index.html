@@ -100,17 +100,31 @@
         .menu-toggle {
             display: none;
             flex-direction: column;
-            gap: 5px;
+            gap: 6px;
             cursor: pointer;
-            z-index: 2001;
+            z-index: 2005;
+            padding: 10px; /* Larger hit area */
+            margin-right: -10px;
         }
 
         .menu-toggle span {
-            width: 25px;
+            width: 30px;
             height: 3px;
             background-color: var(--text-dark);
             border-radius: 2px;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Hamburger to X Animation */
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(10px);
+        }
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
         }
 
         /* Article Structure */
@@ -351,21 +365,27 @@
         /* Responsive */
         @media (max-width: 768px) {
             nav ul {
-                display: none; /* Mobile menu logic handled via JS classes */
+                display: none;
                 flex-direction: column;
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 100%;
+                width: 80%; /* Don't cover full width for better feel */
+                max-width: 300px;
                 height: 100vh;
-                background: rgba(255, 255, 255, 0.98);
+                background: #ffffff;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.1);
                 justify-content: center;
                 align-items: center;
-                transition: 0.4s ease;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
                 z-index: 2000;
+                gap: 40px;
             }
 
-            nav ul.active { display: flex; right: 0; }
+            nav ul.active { 
+                display: flex; 
+                right: 0; 
+            }
             .menu-toggle { display: flex; }
             
             .main-title { font-size: 2rem; }
