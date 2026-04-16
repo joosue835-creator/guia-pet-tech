@@ -69,9 +69,15 @@
         }
 
         .logo img {
-            height: 45px;
-            border-radius: 50%;
-            object-fit: cover;
+            height: 55px; /* Slightly larger for better visibility */
+            border-radius: 12px; /* Soft square/professional icon look */
+            object-fit: contain;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
         }
 
         nav ul {
