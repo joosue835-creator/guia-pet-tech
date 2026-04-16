@@ -103,7 +103,7 @@
             gap: 6px;
             cursor: pointer;
             z-index: 2005;
-            padding: 10px; /* Larger hit area */
+            padding: 10px;
             margin-right: -10px;
         }
 
@@ -125,6 +125,26 @@
         }
         .menu-toggle.active span:nth-child(3) {
             transform: translateY(-9px) rotate(-45deg);
+        }
+
+        /* Mobile Overlay */
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
 
         /* Article Structure */
@@ -365,12 +385,12 @@
         /* Responsive */
         @media (max-width: 768px) {
             nav ul {
-                display: none;
+                display: flex;
                 flex-direction: column;
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 80%; /* Don't cover full width for better feel */
+                width: 75%;
                 max-width: 300px;
                 height: 100vh;
                 background: #ffffff;
@@ -379,12 +399,27 @@
                 align-items: center;
                 transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
                 z-index: 2000;
-                gap: 40px;
+                gap: 50px;
+                opacity: 0;
+                visibility: hidden;
             }
 
             nav ul.active { 
-                display: flex; 
                 right: 0; 
+                opacity: 1;
+                visibility: visible;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul li a {
+                font-size: 1.5rem; /* Better mobile text size */
+                display: block;
+                width: 100%;
+                padding: 10px;
             }
             .menu-toggle { display: flex; }
             
@@ -670,24 +705,27 @@
         </div>
     </footer>
 
+    <div class="mobile-overlay" id="overlay"></div>
+
     <script>
         // Mobile menu toggle logic
         const menuToggle = document.getElementById('mobile-menu');
         const navList = document.getElementById('nav-list');
         const navLinks = document.querySelectorAll('#nav-list li a');
+        const overlay = document.getElementById('overlay');
 
-        menuToggle.addEventListener('click', () => {
+        const toggleMenu = () => {
             menuToggle.classList.toggle('active');
             navList.classList.toggle('active');
+            overlay.classList.toggle('active');
             document.body.style.overflow = navList.classList.contains('active') ? 'hidden' : 'auto';
-        });
+        };
+
+        menuToggle.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
 
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navList.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
+            link.addEventListener('click', toggleMenu);
         });
     </script>
 </body>
