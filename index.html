@@ -7,18 +7,21 @@
     <meta name="description" content="Review Comparativo: Descubra os 5 melhores acessórios pet tech para facilitar sua vida em 2026 com prós e contras de cada opção.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #ffd700;
-            --primary-hover: #e6c200;
-            --text-dark: #1a1a1a;
-            --text-light: #555;
-            --bg-light: #f9f9f9;
-            --white: #ffffff;
-            --pro-color: #059669;
-            --con-color: #dc2626;
-            --transition: all 0.3s ease;
+            --primary: #00d2ff;
+            --primary-dark: #3a7bd5;
+            --accent: #ff4757;
+            --navy: #0f172a;
+            --slate: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
         }
 
         * {
@@ -30,26 +33,29 @@
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--white);
+            color: var(--text-main);
+            background-color: var(--navy);
             overflow-x: hidden;
+            background-image: radial-gradient(circle at 0% 0%, rgba(58, 123, 213, 0.1) 0%, transparent 50%),
+                              radial-gradient(circle at 100% 100%, rgba(0, 210, 255, 0.1) 0%, transparent 50%);
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        /* Header */
-        header {
+        /* Nav Header */
+        .main-nav {
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            padding: 15px 0;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 5000;
+            border-bottom: 1px solid var(--glass-border);
+            padding: 12px 0;
         }
 
         .nav-container {
@@ -62,75 +68,56 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            color: var(--text-dark);
+            color: var(--text-main);
             font-weight: 800;
-            font-size: 1.2rem;
-            gap: 10px;
+            font-size: 1.1rem;
+            gap: 12px;
+            letter-spacing: -0.5px;
         }
 
         .logo img {
-            height: 55px; /* Slightly larger for better visibility */
-            border-radius: 12px; /* Soft square/professional icon look */
+            height: 48px;
+            border-radius: 10px;
             object-fit: contain;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: var(--transition);
+            filter: drop-shadow(0 0 8px rgba(0, 210, 255, 0.3));
         }
 
-        .logo img:hover {
-            transform: scale(1.05);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
-
-        nav ul li a:hover {
-            color: var(--primary-hover);
-        }
-
-        .guias-highlight {
-            color: #2dd4bf !important;
-        }
-
-        /* Back to Top Buttons */
+        /* Back to Top */
         .back-to-top {
-            display: none;
             cursor: pointer;
             transition: var(--transition);
-            background: none;
-            border: none;
-            padding: 10px;
-            color: var(--text-dark);
-            z-index: 2005;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 8px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
 
         .floating-back-to-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #FF8000 0%, #E67300 100%);
+            bottom: 32px;
+            right: 32px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
-            border-radius: 50%;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            z-index: 2000;
+            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.4);
+            z-index: 4000;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             cursor: pointer;
             border: none;
         }
@@ -140,530 +127,397 @@
             visibility: visible;
         }
 
-        .floating-back-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(255,128,0,0.4);
-        }
-
-        @media (max-width: 768px) {
-            .back-to-top { display: flex; }
-            #nav-list { display: none !important; }
-        }
-
-        /* Article Structure */
+        /* Hero / Article Header */
         .article-header {
-            padding: 60px 0 40px;
+            padding: 100px 0 60px;
             text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .badge-main {
             display: inline-block;
-            background: #f0f4ff;
-            color: #4f46e5;
+            background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
+            color: white;
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             padding: 6px 16px;
-            border-radius: 20px;
-            margin-bottom: 20px;
+            border-radius: 100px;
+            margin-bottom: 24px;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
         }
 
         .main-title {
-            font-size: 2.5rem;
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
             font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: #fff;
+            background: linear-gradient(to bottom, #fff 40%, rgba(255,255,255,0.4) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            max-width: 700px;
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            max-width: 600px;
             margin: 0 auto;
+            font-weight: 300;
         }
 
-        /* Review Item */
+        /* Product Cards */
         .review-item {
-            background: var(--white);
-            border-radius: 16px;
-            border: 1px solid #eee;
-            padding: 40px;
-            margin-bottom: 60px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-            position: relative;
+            background: var(--slate);
+            border-radius: 28px;
+            border: 1px solid var(--glass-border);
+            padding: 0;
+            margin-bottom: 80px;
+            overflow: hidden;
+            transition: var(--transition);
             scroll-margin-top: 100px;
         }
 
-        .review-item.is-winner {
-            border: 2px solid var(--primary-color);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+        .review-item:hover {
+            border-color: rgba(0, 210, 255, 0.4);
+            transform: translateY(-8px);
+            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.6);
         }
 
         .item-header {
-            margin-bottom: 25px;
+            padding: 40px 40px 0;
+            margin-bottom: 24px;
         }
 
         .rank-badge {
             display: inline-block;
-            background: var(--primary-color);
-            color: var(--text-dark);
-            font-weight: 800;
-            font-size: 0.85rem;
-            padding: 5px 12px;
-            border-radius: 6px;
-            margin-bottom: 10px;
-        }
-
-        .rank-normal {
-            background: #333;
-            color: white;
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 6px 14px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            margin-bottom: 12px;
         }
 
         .review-item h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
         }
 
-        .item-content {
+        .item-inner-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 48% 52%;
             gap: 40px;
-            align-items: start;
+            padding: 0 40px 40px;
+            align-items: center;
         }
 
         .image-wrapper {
-            border-radius: 12px;
+            border-radius: 20px;
             overflow: hidden;
-            background: #fcfcfc;
+            background: #000;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--glass-border);
         }
 
         .image-wrapper img {
             width: 100%;
-            height: auto;
-            aspect-ratio: 4/3;
+            height: 100%;
+            aspect-ratio: 1/1;
             object-fit: cover;
+            display: block;
+            transition: var(--transition);
         }
 
-        .description {
-            font-size: 1rem;
-            margin-bottom: 25px;
-            color: var(--text-dark);
+        .review-item:hover .image-wrapper img {
+            transform: scale(1.05);
         }
 
-        /* Pros Cons */
+        .details-wrapper p {
+            font-size: 1.15rem;
+            color: var(--text-dim);
+            margin-bottom: 32px;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* Pros/Cons Box */
         .pros-cons {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 30px;
-            background: #fafafa;
-            padding: 20px;
-            border-radius: 12px;
+            gap: 24px;
+            background: rgba(15, 23, 42, 0.6);
+            padding: 28px;
+            border-radius: 20px;
+            margin-bottom: 32px;
+            border: 1px solid var(--glass-border);
         }
 
-        .pros-cons h4 {
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
+        .pros h4 { color: #10b981; margin-bottom: 16px; font-size: 0.95rem; font-weight: 700; }
+        .cons h4 { color: #f43f5e; margin-bottom: 16px; font-size: 0.95rem; font-weight: 700; }
 
-        .pros h4 { color: var(--pro-color); }
-        .cons h4 { color: var(--con-color); }
+        .pros-cons ul { list-style: none; font-size: 0.95rem; color: var(--text-dim); }
+        .pros-cons li { position: relative; padding-left: 24px; margin-bottom: 12px; }
+        
+        .pros li::before { content: "✓"; position: absolute; left: 0; color: #10b981; font-weight: 900; }
+        .cons li::before { content: "×"; position: absolute; left: 0; color: #f43f5e; font-weight: 900; font-size: 1.2rem; line-height: 0.8; }
 
-        .pros-cons ul {
-            list-style: none;
-            font-size: 0.85rem;
-        }
-
-        .pros-cons li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 6px;
-        }
-
-        .pros li::before { 
-            content: "\2713"; 
-            position: absolute; 
-            left: 0; 
-            color: var(--pro-color); 
-            font-weight: bold; 
-        }
-        .cons li::before { 
-            content: "\00d7"; 
-            position: absolute; 
-            left: 0; 
-            color: var(--con-color); 
-            font-weight: bold; 
-            font-size: 1.1rem;
-            line-height: 0.9;
-        }
-
-        /* CTA Button */
+        /* Conversion CTA */
         .cta-button {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #FF8000 0%, #E67300 100%);
-            color: #FFFFFF;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: #fff;
             text-decoration: none;
             font-weight: 800;
-            padding: 18px;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: none;
+            padding: 24px;
+            border-radius: 20px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+            box-shadow: 0 15px 35px rgba(0, 210, 255, 0.3);
         }
 
         .cta-button:hover {
-            background: linear-gradient(135deg, #E67300 0%, #CC6600 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(255, 128, 0, 0.3);
-        }
-
-        .cta-button:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(255, 128, 0, 0.2);
+            transform: scale(1.03);
+            box-shadow: 0 20px 45px rgba(0, 210, 255, 0.5);
         }
 
         /* Winner Badge */
         .winner-overlay {
             position: absolute;
             top: 20px;
-            right: 20px;
-            background: #ff4757;
+            left: 20px;
+            background: var(--accent);
             color: white;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-weight: 800;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 900;
             font-size: 0.75rem;
             z-index: 10;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 16px rgba(244, 63, 94, 0.4);
         }
 
-        /* Sobre Section */
-        #sobre-nos {
-            padding: 80px 0;
-            background: var(--bg-light);
-            margin-top: 40px;
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        .sobre-container {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .article-header { padding: 80px 0 50px; }
+            .main-title { font-size: 2.5rem; }
+            .item-inner-content {
+                grid-template-columns: 1fr;
+                padding: 0 24px 32px;
+                gap: 28px;
+            }
+            .image-wrapper {
+                margin: 0 -24px 0; /* Full Bleed in mobile */
+                border-radius: 0;
+            }
+            .image-wrapper img {
+                aspect-ratio: 16/11;
+            }
+            .item-header {
+                padding: 32px 24px 16px;
+            }
+            .review-item h3 { font-size: 1.8rem; }
+            .pros-cons { grid-template-columns: 1fr; padding: 24px; }
+            .floating-back-to-top { bottom: 24px; right: 24px; }
         }
 
         /* Footer */
         footer {
-            background: #111;
-            color: #eee;
-            padding: 60px 0;
+            background: #070b14;
+            padding: 100px 0;
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
         }
 
         .footer-content {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 40px;
+            gap: 48px;
         }
 
         .author-box {
             display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 20px;
         }
 
         .author-box img {
-            width: 70px;
-            height: 70px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            border: 3px solid var(--primary-color);
-            object-fit: cover;
+            border: 3px solid var(--primary);
+            padding: 6px;
+            background: var(--glass);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .cta-button { width: 100%; display: flex; }
-        }
-
-        /* Desktop Positioning for Relocated Menu */
-        @media (min-width: 769px) {
-            #nav-list {
-                position: fixed;
-                top: 25px;
-                z-index: 1001;
-                display: flex;
-                list-style: none;
-                gap: 30px;
-            }
-            
-            nav {
-                display: flex;
-                align-items: center;
-            }
-        }
-
-        /* Desktop: 769px to 1000px (standard tablet/small laptop) */
-        @media (min-width: 769px) and (max-width: 1000px) {
-            #nav-list {
-                right: 20px;
-            }
-        }
-        
-        /* Desktop: 1001px+ (large screens) */
-        @media (min-width: 1001px) {
-            #nav-list {
-                right: calc((100% - 1000px) / 2 + 20px);
-            }
-        }
-
-        /* Adjusted gap for nav-container on desktop */
-        .nav-container {
-            position: relative;
-        }
-
-        /* Safe Animations (Fade in on load only) */
-        @keyframes simpleFadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .fade-in {
-            animation: simpleFadeIn 1s ease forwards;
-        }
+        .author-info h4 { margin-bottom: 8px; font-size: 1.4rem; font-weight: 800; }
+        .author-info p { color: var(--text-dim); font-size: 1rem; }
+        .footer-logo p { color: var(--text-dim); font-size: 0.9rem; margin-top: 20px;}
     </style>
 </head>
 <body>
-    <header>
+    <header class="main-nav">
         <div class="container nav-container">
             <div class="logo">
                 <a href="#">
                     <img src="logo.png" alt="Guia Pet Tech Logo">
-                    <span>Guia Pet Tech</span>
+                    <span>GUIA PET TECH</span>
                 </a>
             </div>
-            <nav>
-                <button class="back-to-top" id="header-top-btn" aria-label="Voltar ao topo">
-                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
-                </button>
-            </nav>
+            <button class="back-to-top" id="header-top-btn" aria-label="Voltar ao topo">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="3" fill="none"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+            </button>
         </div>
     </header>
 
     <main class="container">
-        <header class="article-header fade-in">
-            <div class="badge-main">Review Comparativo</div>
-            <h1 class="main-title">Os 5 Melhores Acessórios Pet para Facilitar sua Vida em 2026</h1>
-            <p class="subtitle">Analisamos e selecionamos os itens indispensáveis que vão transformar a sua rotina com seu melhor amigo.</p>
-        </header>
+        <section class="article-header reveal">
+            <div class="badge-main">Review Comparativo 2026</div>
+            <h1 class="main-title">A Nova Era do Cuidado Pet Inteligente</h1>
+            <p class="subtitle">Analisamos a tecnologia que está revolucionando a vida de cães, gatos e seus humanos este ano.</p>
+        </section>
 
         <div class="article-body">
             
             <!-- ITEM 1 -->
-            <section class="review-item is-winner fade-in" id="item-1">
+            <section class="review-item reveal" id="item-1">
                 <div class="item-header">
-                    <div class="rank-badge">🏆 Escolha do Editor #1</div>
-                    <h3>1. Fonte de água para pets</h3>
+                    <div class="rank-badge">🏆 TOP TECH 2026</div>
+                    <h3>1. Fonte de Água Ultravioleta</h3>
                 </div>
                 
-                <div class="item-content">
+                <div class="item-inner-content">
                     <div class="image-wrapper">
-                        <img src="fonte.png" alt="Fonte de água automática para pets e gatos" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=500&q=60';">
+                        <img src="fonte.png" alt="Fonte de água automática inteligente" onerror="this.src='https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=500&q=60';">
+                        <div class="winner-overlay">VENCEDORA</div>
                     </div>
-                    
                     <div class="details-wrapper">
-                        <p class="description">Esqueça a preocupação de trocar a água da vasilha várias vezes ao dia. Esta fonte garante água corrente e oxigenada que atrai seu pet, resolvendo o problema comum de cães e gatos que bebem pouca água e desenvolvem riscos de doenças renais.</p>
+                        <p>Hidratação pura garantida. Esta fonte não apenas filtra, mas utiliza luz UV para eliminar 99.9% das bactérias, essencial para a saúde renal de gatos e cães.</p>
                         
                         <div class="pros-cons">
                             <div class="pros">
-                                <h4>👍 Prós</h4>
+                                <h4>✅ VANTAGENS</h4>
                                 <ul>
-                                    <li>Filtro de carvão ativado contínuo.</li>
-                                    <li>Incentiva maior ingestão hídrica vital.</li>
-                                    <li>Motor da bomba super silencioso.</li>
+                                    <li>Esterilização UV inteligente</li>
+                                    <li>Fluxo ultra-silencioso</li>
+                                    <li>Monitoramento via sensor</li>
                                 </ul>
                             </div>
                             <div class="cons">
-                                <h4>👎 Contras</h4>
+                                <h4>⚠️ NOTA</h4>
                                 <ul>
-                                    <li>Demanda tomada de energia próxima ao local.</li>
-                                    <li>Custo regular para a troca dos refis do filtro.</li>
+                                    <li>Depende de rede elétrica</li>
+                                    <li>Filtros proprietários</li>
                                 </ul>
                             </div>
                         </div>
                         
-                        <a href="https://meli.la/1tvHFVs?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank" rel="noopener nofollow">
-                            <span>CONFERIR OFERTA NO MERCADO LIVRE</span>
-                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="3" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                        <a href="https://meli.la/1tvHFVs?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">
+                            <span>OFERTA EXCLUSIVA MERCADO LIVRE</span>
+                            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="4" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                         </a>
                     </div>
                 </div>
             </section>
 
             <!-- ITEM 2 -->
-            <section class="review-item fade-in" id="item-2">
-                <div class="winner-overlay">🔥 MAIS VENDIDO</div>
+            <section class="review-item reveal" id="item-2">
                 <div class="item-header">
-                    <div class="rank-badge rank-normal">⭐ Mais Vendido</div>
-                    <h3>2. Cama nuvem para cachorro ou gato</h3>
+                    <div class="rank-badge">🛋️ CONFORTO SUPREMO</div>
+                    <h3>2. Cama Nuvem Ortopédica</h3>
                 </div>
                 
-                <div class="item-content">
+                <div class="item-inner-content">
                     <div class="image-wrapper">
-                        <img src="cama.png" alt="Cama nuvem antiestresse para cachorro ou gato" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=500&q=80';">
+                        <img src="cama.png" alt="Cama nuvem antiestresse conforto luxo" onerror="this.src='https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=500&q=80';">
                     </div>
-                    
                     <div class="details-wrapper">
-                        <p class="description">Gatos e cães adoram uma superfície macia e elevada. A cama nuvem foi desenhada com bordas que oferecem suporte para a cabeça e pescoço, criando uma sensação de segurança que ajuda a reduzir a ansiedade do seu pet durante o sono.</p>
+                        <p>Alívio imediato da ansiedade. O design de "ninho" e a pelúcia ultra-macia mimetizam o contato com a mãe, proporcionando um sono profundo e reparador.</p>
                         
                         <div class="pros-cons">
                             <div class="pros">
-                                <h4>👍 Prós</h4>
+                                <h4>✅ VANTAGENS</h4>
                                 <ul>
-                                    <li>Enchimento ultra macio de alta qualidade.</li>
-                                    <li>Ajuda no relaxamento e sono profundo.</li>
-                                    <li>Fundo antiderrapante para segurança.</li>
+                                    <li>Redução comprovada de estresse</li>
+                                    <li>Suporte para articulações</li>
+                                    <li>Lavável em máquina</li>
                                 </ul>
                             </div>
                             <div class="cons">
-                                <h4>👎 Contras</h4>
+                                <h4>⚠️ NOTA</h4>
                                 <ul>
-                                    <li>Pode ser difícil de secar após a lavagem.</li>
-                                    <li>Ocupa um espaço considerável no ambiente.</li>
+                                    <li>Ocupa espaço considerável</li>
                                 </ul>
                             </div>
                         </div>
                         
-                        <a href="https://meli.la/1JBNLej?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank" rel="noopener nofollow">
-                            <span>CONFERIR OFERTA NO MERCADO LIVRE</span>
-                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="3" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                        <a href="https://meli.la/1JBNLej?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">
+                            <span>VER PREÇO NO MERCADO LIVRE</span>
+                            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="4" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                         </a>
                     </div>
                 </div>
             </section>
 
             <!-- ITEM 3 -->
-            <section class="review-item fade-in" id="item-3">
-                <div class="item-header">
-                    <div class="rank-badge rank-normal">✨ Praticidade</div>
-                    <h3>3. Tapete higiênico premium</h3>
-                </div>
-                
-                <div class="item-content">
-                    <div class="image-wrapper">
-                        <img src="tapete.png" alt="Tapete higiênico premium com alta absorção para pets" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=500&q=60';">
-                    </div>
-                    
+            <section class="review-item reveal" id="item-3">
+                <div class="item-header"><div class="rank-badge">💎 ALTA PERFORMANCE</div><h3>3. Tapete Higiênico de Carvão Ativado</h3></div>
+                <div class="item-inner-content">
+                    <div class="image-wrapper"><img src="tapete.png" alt="Tapete higiênico premium carvão" onerror="this.src='https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=500&q=60';"></div>
                     <div class="details-wrapper">
-                        <p class="description">Manter a casa limpa e sem odores é o maior desafio de quem tem pet em apartamento. Este tapete possui tecnologia de gel absorvente que seca a urina em segundos, evitando patinhas molhadas pela casa e odores desagradáveis no ambiente.</p>
-                        
-                        <div class="pros-cons">
-                            <div class="pros">
-                                <h4>👍 Prós</h4>
-                                <ul>
-                                    <li>Tecnologia de neutralização de odores.</li>
-                                    <li>Fitas adesivas de fixação resistentes.</li>
-                                    <li>Com atrativo canino embutido.</li>
-                                </ul>
-                            </div>
-                            <div class="cons">
-                                <h4>👎 Contras</h4>
-                                <ul>
-                                    <li>Representa uma despesa recorrente.</li>
-                                    <li>Aumenta a geração de lixo não reciclável.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <a href="https://meli.la/1MqfQtL?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank" rel="noopener nofollow">
-                            <span>CONFERIR OFERTA NO MERCADO LIVRE</span>
-                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="3" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                        </a>
+                        <p>Neutralização total de odores. O carvão ativado combinado com gel de secagem rápida garante que sua casa permaneça impecável.</p>
+                        <a href="https://meli.la/1MqfQtL?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">IR PARA MERCADO LIVRE</a>
                     </div>
                 </div>
             </section>
 
             <!-- ITEM 4 -->
-            <section class="review-item fade-in" id="item-4">
-                <div class="item-header">
-                    <div class="rank-badge rank-normal">💡 Inovação</div>
-                    <h3>4. Brinquedo interativo para gatos</h3>
-                </div>
-                
-                <div class="item-content">
-                    <div class="image-wrapper">
-                        <img src="brinquedo.png" alt="Brinquedo interativo automático para gatos estimular instintos" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1615266895738-11f1371cd7e5?auto=format&fit=crop&w=500&q=60';">
-                    </div>
-                    
+            <section class="review-item reveal" id="item-4">
+                <div class="item-header"><div class="rank-badge">⚡ ENTRETENIMENTO SMART</div><h3>4. Brinquedo Automático Laser Pro</h3></div>
+                <div class="item-inner-content">
+                    <div class="image-wrapper"><img src="brinquedo.png" alt="Brinquedo interativo automático gatos" onerror="this.src='https://images.unsplash.com/photo-1615266895738-11f1371cd7e5?auto=format&fit=crop&w=500&q=60';"></div>
                     <div class="details-wrapper">
-                        <p class="description">Gatos que ficam sozinhos podem ficar entediados e estressados. Este brinquedo eletrônico simula movimentos imprevisíveis de uma presa, estimulando o instinto caçador e garantindo que seu felino se exercite mesmo quando você não está em casa.</p>
-                        
-                        <div class="pros-cons">
-                            <div class="pros">
-                                <h4>👍 Prós</h4>
-                                <ul>
-                                    <li>Estimula o exercício físico e mental.</li>
-                                    <li>Desvia inteligentemente de obstáculos.</li>
-                                    <li>Recarregável via cabo USB.</li>
-                                </ul>
-                            </div>
-                            <div class="cons">
-                                <h4>👎 Contras</h4>
-                                <ul>
-                                    <li>Não funciona bem em tapetes muito altos.</li>
-                                    <li>O ruído leve pode incomodar no início.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <a href="https://meli.la/2GYQhkv?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank" rel="noopener nofollow">
-                            <span>CONFERIR OFERTA NO MERCADO LIVRE</span>
-                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="3" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                        </a>
+                        <p>Diga adeus ao sedentarismo. Este gadget mantém gatos ativos por horas com padrões de movimento imprevisíveis e recarga USB.</p>
+                        <a href="https://meli.la/2GYQhkv?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">IR PARA MERCADO LIVRE</a>
                     </div>
                 </div>
             </section>
 
             <!-- ITEM 5 -->
-            <section class="review-item fade-in" id="item-5">
-                <div class="item-header">
-                    <div class="rank-badge rank-normal">🏠 Bem-Estar</div>
-                    <h3>5. Arranhador casa para gatos</h3>
-                </div>
-                
-                <div class="item-content">
-                    <div class="image-wrapper">
-                        <img src="arranhador.png" alt="Arranhador casa multifuncional para gatos com nicho" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?auto=format&fit=crop&w=500&q=60';">
-                    </div>
-                    
+            <section class="review-item reveal" id="item-5">
+                <div class="item-header"><div class="rank-badge">🏰 DESIGN & BEM-ESTAR</div><h3>5. Arranhador Casa Multifuncional</h3></div>
+                <div class="item-inner-content">
+                    <div class="image-wrapper"><img src="arranhador.png" alt="Arranhador premium luxo" onerror="this.src='https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?auto=format&fit=crop&w=500&q=60';"></div>
                     <div class="details-wrapper">
-                        <p class="description">Proteja seus móveis e ofereça um refúgio seguro para seu gato. Este modelo combina o local para afiar unhas com um nicho escuro e confortável para descanso, atendendo a duas necessidades biológicas fundamentais dos felinos em um só produto.</p>
-                        
-                        <div class="pros-cons">
-                            <div class="pros">
-                                <h4>👍 Prós</h4>
-                                <ul>
-                                    <li>Múltiplos níveis encorajam atividades.</li>
-                                    <li>Tocas acolchoadas garantem conforto.</li>
-                                    <li>Materiais de alta durabilidade.</li>
-                                </ul>
-                            </div>
-                            <div class="cons">
-                                <h4>👎 Contras</h4>
-                                <ul>
-                                    <li>Peça grande que exige espaço livre.</li>
-                                    <li>A limpeza dos pelos exige manutenção.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <a href="https://meli.la/23aYvwL?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank" rel="noopener nofollow">
-                            <span>CONFERIR OFERTA NO MERCADO LIVRE</span>
-                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="3" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                        </a>
+                        <p>O equilíbrio perfeito entre diversão e descanso. Uma peça de arquitetura felina que protege seus móveis e serve como um santuário seguro.</p>
+                        <a href="https://meli.la/23aYvwL?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">IR PARA MERCADO LIVRE</a>
                     </div>
                 </div>
             </section>
@@ -671,52 +525,57 @@
         </div>
     </main>
 
-    <section id="sobre-nos" class="fade-in">
-        <div class="container sobre-container">
-            <h2 style="font-size: 2rem; margin-bottom: 20px;">Sobre o Guia Pet Tech</h2>
-            <p>O Guia Pet Tech nasceu da paixão por inovação e do compromisso com o bem-estar animal. Nossa missão é simplificar a vida dos donos de pets, trazendo uma curadoria rigorosa dos melhores acessórios tecnológicos e produtos de alta performance disponíveis no Mercado Livre. Não apenas listamos produtos; analisamos tendências e buscamos soluções que realmente transformam a rotina entre você e seu melhor amigo. Tecnologia, segurança e carinho em cada escolha.</p>
-        </div>
-    </section>
-
-    <footer>
+    <footer class="reveal">
         <div class="container footer-content">
             <div class="author-box">
-                <img src="foto-josue.jpg" alt="Josué - Fundador">
+                <img src="foto-josue.jpg" alt="Josué">
                 <div class="author-info">
                     <h4>Josué</h4>
-                    <p>Especialista em Tecnologia e Vida Animal</p>
+                    <p>Tech Enthusiast & Founder of Guia Pet Tech</p>
                 </div>
             </div>
             <div class="footer-logo">
-                <p style="font-size: 0.8rem; color: #777;">&copy; 2026 Guia Pet Tech. Todos os direitos reservados.</p>
+                <p>&copy; 2026 Guia Pet Tech. Pioneirismo no cuidado animal.</p>
             </div>
         </div>
     </footer>
 
     <button class="floating-back-to-top" id="floating-top-btn" aria-label="Voltar ao topo">
-        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="3" fill="none"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
     </button>
 
     <script>
-        const headerTopBtn = document.getElementById('header-top-btn');
-        const floatingTopBtn = document.getElementById('floating-top-btn');
-
-        const scrollToTop = () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        // Scroll Reveal Logic
+        const reveal = () => {
+            const reveals = document.querySelectorAll(".reveal");
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 120;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
         };
 
-        headerTopBtn.addEventListener('click', scrollToTop);
-        floatingTopBtn.addEventListener('click', scrollToTop);
+        window.addEventListener("scroll", reveal);
+        // Initial call
+        setTimeout(reveal, 100);
 
-        // Show/hide floating button on scroll
+        // Scroll to Top
+        const scrollToTop = () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        document.getElementById('header-top-btn').addEventListener('click', scrollToTop);
+        document.getElementById('floating-top-btn').addEventListener('click', scrollToTop);
+
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
-                floatingTopBtn.classList.add('show');
+            const floatingBtn = document.getElementById('floating-top-btn');
+            if (window.scrollY > 600) {
+                floatingBtn.classList.add('show');
             } else {
-                floatingTopBtn.classList.remove('show');
+                floatingBtn.classList.remove('show');
             }
         });
     </script>
