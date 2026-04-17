@@ -5,382 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Os 5 Melhores Acessórios Pet para 2026 | Guia Pet Tech</title>
     <meta name="description" content="Review Comparativo: Descubra os 5 melhores acessórios pet tech para facilitar sua vida em 2026 com prós e contras de cada opção.">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #FFD700;
-            --primary-dark: #FF8000;
-            --accent: #ff4757;
-            --navy: #0f172a;
-            --slate: #1e293b;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-main);
-            background-color: var(--navy);
-            overflow-x: hidden;
-            background-image: radial-gradient(circle at 0% 0%, rgba(58, 123, 213, 0.1) 0%, transparent 50%),
-                              radial-gradient(circle at 100% 100%, rgba(0, 210, 255, 0.1) 0%, transparent 50%);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Nav Header */
-        .main-nav {
-            position: sticky;
-            top: 0;
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            z-index: 5000;
-            border-bottom: 1px solid var(--glass-border);
-            padding: 12px 0;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 800;
-            font-size: 1.1rem;
-            gap: 12px;
-            letter-spacing: -0.5px;
-        }
-
-        .logo img {
-            height: 48px;
-            border-radius: 10px;
-            object-fit: contain;
-            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
-        }
-
-        /* Back to Top */
-        .back-to-top {
-            cursor: pointer;
-            transition: var(--transition);
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 8px;
-            padding: 8px;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .back-to-top:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .floating-back-to-top {
-            position: fixed;
-            bottom: 32px;
-            right: 32px;
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 25px rgba(255, 128, 0, 0.4);
-            z-index: 4000;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            cursor: pointer;
-            border: none;
-        }
-
-        .floating-back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Hero / Article Header */
-        .article-header {
-            padding: 100px 0 60px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .badge-main {
-            display: inline-block;
-            background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
-            color: white;
-            font-weight: 700;
-            font-size: 0.75rem;
-            padding: 6px 16px;
-            border-radius: 100px;
-            margin-bottom: 24px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-        }
-
-        .main-title {
-            font-size: clamp(2.2rem, 6vw, 3.8rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            color: #fff;
-            background: linear-gradient(to bottom, #fff 40%, rgba(255,255,255,0.4) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .subtitle {
-            font-size: 1.25rem;
-            color: var(--text-dim);
-            max-width: 600px;
-            margin: 0 auto;
-            font-weight: 300;
-        }
-
-        /* Product Cards */
-        .review-item {
-            background: var(--slate);
-            border-radius: 28px;
-            border: 1px solid var(--glass-border);
-            padding: 0;
-            margin-bottom: 80px;
-            overflow: hidden;
-            transition: var(--transition);
-            scroll-margin-top: 100px;
-        }
-
-        .review-item:hover {
-            border-color: rgba(255, 215, 0, 0.4);
-            transform: translateY(-8px);
-            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.6);
-        }
-
-        .item-header {
-            padding: 40px 40px 0;
-            margin-bottom: 24px;
-        }
-
-        .rank-badge {
-            display: inline-block;
-            background: rgba(255, 215, 0, 0.1);
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 0.8rem;
-            padding: 6px 14px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            margin-bottom: 12px;
-        }
-
-        .review-item h3 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #fff;
-            letter-spacing: -0.5px;
-        }
-
-        .item-inner-content {
-            display: grid;
-            grid-template-columns: 48% 52%;
-            gap: 40px;
-            padding: 0 40px 40px;
-            align-items: center;
-        }
-
-        .image-wrapper {
-            border-radius: 20px;
-            overflow: hidden;
-            background: #000;
-            position: relative;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--glass-border);
-        }
-
-        .image-wrapper img {
-            width: 100%;
-            height: 100%;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-            display: block;
-            transition: var(--transition);
-        }
-
-        .review-item:hover .image-wrapper img {
-            transform: scale(1.05);
-        }
-
-        .details-wrapper p {
-            font-size: 1.15rem;
-            color: var(--text-dim);
-            margin-bottom: 32px;
-            font-weight: 300;
-            line-height: 1.7;
-        }
-
-        /* Pros/Cons Box */
-        .pros-cons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            background: rgba(15, 23, 42, 0.6);
-            padding: 28px;
-            border-radius: 20px;
-            margin-bottom: 32px;
-            border: 1px solid var(--glass-border);
-        }
-
-        .pros h4 { color: #10b981; margin-bottom: 16px; font-size: 0.95rem; font-weight: 700; }
-        .cons h4 { color: #f43f5e; margin-bottom: 16px; font-size: 0.95rem; font-weight: 700; }
-
-        .pros-cons ul { list-style: none; font-size: 0.95rem; color: var(--text-dim); }
-        .pros-cons li { position: relative; padding-left: 24px; margin-bottom: 12px; }
-        
-        .pros li::before { content: "✓"; position: absolute; left: 0; color: #10b981; font-weight: 900; }
-        .cons li::before { content: "×"; position: absolute; left: 0; color: #f43f5e; font-weight: 900; font-size: 1.2rem; line-height: 0.8; }
-
-        /* Conversion CTA */
-        .cta-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: linear-gradient(135deg, #FFE000 0%, #FFB000 100%);
-            color: #000;
-            text-decoration: none;
-            font-weight: 800;
-            padding: 24px;
-            border-radius: 20px;
-            transition: var(--transition);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.95rem;
-            box-shadow: 0 15px 35px rgba(255, 176, 0, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0 20px 45px rgba(255, 176, 0, 0.5);
-        }
-
-        /* Winner Badge */
-        .winner-overlay {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: var(--accent);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 12px;
-            font-weight: 900;
-            font-size: 0.75rem;
-            z-index: 10;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 8px 16px rgba(244, 63, 94, 0.4);
-        }
-
-        /* Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            .article-header { padding: 80px 0 50px; }
-            .main-title { font-size: 2.5rem; }
-            .item-inner-content {
-                grid-template-columns: 1fr;
-                padding: 0 24px 32px;
-                gap: 28px;
-            }
-            .image-wrapper {
-                margin: 0 -24px 0; /* Full Bleed in mobile */
-                border-radius: 0;
-            }
-            .image-wrapper img {
-                aspect-ratio: 16/11;
-            }
-            .item-header {
-                padding: 32px 24px 16px;
-            }
-            .review-item h3 { font-size: 1.8rem; }
-            .pros-cons { grid-template-columns: 1fr; padding: 24px; }
-            .floating-back-to-top { bottom: 24px; right: 24px; }
-        }
-
-        /* Footer */
-        footer {
-            background: #070b14;
-            padding: 100px 0;
-            border-top: 1px solid var(--glass-border);
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 48px;
-        }
-
-        .author-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .author-box img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 3px solid var(--primary);
-            padding: 6px;
-            background: var(--glass);
-        }
-
-        .author-info h4 { margin-bottom: 8px; font-size: 1.4rem; font-weight: 800; }
-        .author-info p { color: var(--text-dim); font-size: 1rem; }
-        .footer-logo p { color: var(--text-dim); font-size: 0.9rem; margin-top: 20px;}
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- External Styles -->
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
     <header class="main-nav">
@@ -404,6 +36,28 @@
             <p class="subtitle">Analisamos a tecnologia que está revolucionando a vida de cães, gatos e seus humanos este ano.</p>
         </section>
 
+        <!-- New Section: Why Pet Tech? -->
+        <section class="why-pet-tech reveal">
+            <h2 class="main-title" style="font-size: 2.2rem;">Por que investir em Pet Tech?</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <svg viewBox="0 0 24 24" width="40" height="40" stroke="#00d2ff" stroke-width="2" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <h4>Saúde Monitorada</h4>
+                    <p>Sensores que alertam sobre mudanças no comportamento e padrões de hidratação.</p>
+                </div>
+                <div class="why-card">
+                    <svg viewBox="0 0 24 24" width="40" height="40" stroke="#FFE000" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                    <h4>Ganhe Tempo</h4>
+                    <p>Automação inteligente para tarefas repetitivas como alimentação e limpeza.</p>
+                </div>
+                <div class="why-card">
+                    <svg viewBox="0 0 24 24" width="40" height="40" stroke="#f43f5e" stroke-width="2" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <h4>Menos Ansiedade</h4>
+                    <p>Gadgets que mantêm seu pet entretido e calmo enquanto você está fora.</p>
+                </div>
+            </div>
+        </section>
+
         <div class="article-body">
             
             <!-- ITEM 1 -->
@@ -419,7 +73,7 @@
                         <div class="winner-overlay">VENCEDORA</div>
                     </div>
                     <div class="details-wrapper">
-                        <p>Hidratação pura garantida. Esta fonte não apenas filtra, mas utiliza luz UV para eliminar 99.9% das bactérias, essencial para a saúde renal de gatos e cães.</p>
+                        <p>Hidratação pura garantida. Esta fonte não apenas filtra, mas utiliza luz UV para eliminar 99.9% das bactérias, essencial para a saúde renal.</p>
                         
                         <div class="pros-cons">
                             <div class="pros">
@@ -427,21 +81,19 @@
                                 <ul>
                                     <li>Esterilização UV inteligente</li>
                                     <li>Fluxo ultra-silencioso</li>
-                                    <li>Monitoramento via sensor</li>
                                 </ul>
                             </div>
                             <div class="cons">
                                 <h4>⚠️ NOTA</h4>
                                 <ul>
                                     <li>Depende de rede elétrica</li>
-                                    <li>Filtros proprietários</li>
                                 </ul>
                             </div>
                         </div>
                         
                         <a href="https://meli.la/1tvHFVs?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">
-                            <span>OFERTA EXCLUSIVA MERCADO LIVRE</span>
-                            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="4" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                            <span>OFERTA MERCADO LIVRE</span>
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="3" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                         </a>
                     </div>
                 </div>
@@ -459,7 +111,7 @@
                         <img src="cama.png" alt="Cama nuvem antiestresse conforto luxo" onerror="this.src='https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=500&q=80';">
                     </div>
                     <div class="details-wrapper">
-                        <p>Alívio imediato da ansiedade. O design de "ninho" e a pelúcia ultra-macia mimetizam o contato com a mãe, proporcionando um sono profundo e reparador.</p>
+                        <p>Alívio imediato da ansiedade. O design de "ninho" e a pelúcia ultra-macia proporcionam um sono profundo e reparador.</p>
                         
                         <div class="pros-cons">
                             <div class="pros">
@@ -467,7 +119,6 @@
                                 <ul>
                                     <li>Redução comprovada de estresse</li>
                                     <li>Suporte para articulações</li>
-                                    <li>Lavável em máquina</li>
                                 </ul>
                             </div>
                             <div class="cons">
@@ -479,8 +130,8 @@
                         </div>
                         
                         <a href="https://meli.la/1JBNLej?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">
-                            <span>VER PREÇO NO MERCADO LIVRE</span>
-                            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="4" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                            <span>VER PREÇO EXCLUSIVO</span>
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="3" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                         </a>
                     </div>
                 </div>
@@ -488,54 +139,107 @@
 
             <!-- ITEM 3 -->
             <section class="review-item reveal" id="item-3">
-                <div class="item-header"><div class="rank-badge">💎 ALTA PERFORMANCE</div><h3>3. Tapete Higiênico de Carvão Ativado</h3></div>
+                <div class="item-header">
+                    <div class="rank-badge">💎 ALTA PERFORMANCE</div>
+                    <h3>3. Tapete de Carvão Ativado</h3>
+                </div>
                 <div class="item-inner-content">
-                    <div class="image-wrapper"><img src="tapete.png" alt="Tapete higiênico premium carvão" onerror="this.src='https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=500&q=60';"></div>
+                    <div class="image-wrapper">
+                        <img src="tapete.png" alt="Tapete higiênico premium carvão" onerror="this.src='https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=500&q=60';">
+                    </div>
                     <div class="details-wrapper">
                         <p>Neutralização total de odores. O carvão ativado combinado com gel de secagem rápida garante que sua casa permaneça impecável.</p>
-                        <a href="https://meli.la/1MqfQtL?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">IR PARA MERCADO LIVRE</a>
+                        <a href="https://meli.la/1MqfQtL?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">
+                            <span>COMBATER ODORES</span>
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="3" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                        </a>
                     </div>
                 </div>
             </section>
 
             <!-- ITEM 4 -->
             <section class="review-item reveal" id="item-4">
-                <div class="item-header"><div class="rank-badge">⚡ ENTRETENIMENTO SMART</div><h3>4. Brinquedo Automático Laser Pro</h3></div>
+                <div class="item-header">
+                    <div class="rank-badge">⚡ ENTRETENIMENTO SMART</div>
+                    <h3>4. Brinquedo Laser Pro</h3>
+                </div>
                 <div class="item-inner-content">
-                    <div class="image-wrapper"><img src="brinquedo.png" alt="Brinquedo interativo automático gatos" onerror="this.src='https://images.unsplash.com/photo-1615266895738-11f1371cd7e5?auto=format&fit=crop&w=500&q=60';"></div>
+                    <div class="image-wrapper">
+                        <img src="brinquedo.png" alt="Brinquedo interativo automático gatos" onerror="this.src='https://images.unsplash.com/photo-1615266895738-11f1371cd7e5?auto=format&fit=crop&w=500&q=60';">
+                    </div>
                     <div class="details-wrapper">
-                        <p>Diga adeus ao sedentarismo. Este gadget mantém gatos ativos por horas com padrões de movimento imprevisíveis e recarga USB.</p>
-                        <a href="https://meli.la/2GYQhkv?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">IR PARA MERCADO LIVRE</a>
+                        <p>Diga adeus ao sedentarismo. Este gadget mantém pets ativos por horas com padrões de movimento imprevisíveis e recarga USB.</p>
+                        <a href="https://meli.la/2GYQhkv?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">
+                            <span>VER NO MERCADO LIVRE</span>
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="3" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                        </a>
                     </div>
                 </div>
             </section>
 
             <!-- ITEM 5 -->
             <section class="review-item reveal" id="item-5">
-                <div class="item-header"><div class="rank-badge">🏰 DESIGN & BEM-ESTAR</div><h3>5. Arranhador Casa Multifuncional</h3></div>
+                <div class="item-header">
+                    <div class="rank-badge">🏰 DESIGN & BEM-ESTAR</div>
+                    <h3>5. Arranhador Multifuncional</h3>
+                </div>
                 <div class="item-inner-content">
-                    <div class="image-wrapper"><img src="arranhador.png" alt="Arranhador premium luxo" onerror="this.src='https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?auto=format&fit=crop&w=500&q=60';"></div>
+                    <div class="image-wrapper">
+                        <img src="arranhador.png" alt="Arranhador premium luxo" onerror="this.src='https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?auto=format&fit=crop&w=500&q=60';">
+                    </div>
                     <div class="details-wrapper">
                         <p>O equilíbrio perfeito entre diversão e descanso. Uma peça de arquitetura felina que protege seus móveis e serve como um santuário seguro.</p>
-                        <a href="https://meli.la/23aYvwL?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">IR PARA MERCADO LIVRE</a>
+                        <a href="https://meli.la/23aYvwL?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">
+                            <span>PROTEGER MEUS MÓVEIS</span>
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="3" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                        </a>
                     </div>
                 </div>
             </section>
 
         </div>
+
+        <!-- Seção Sobre Nós -->
+        <section class="about-section reveal" id="sobre-nos">
+            <div class="about-content">
+                <div class="badge-main">Nossa Missão</div>
+                <h2 class="main-title" style="font-size: 2.2rem;">Tecnologia com Propósito</h2>
+                <p>O <strong>Guia Pet Tech</strong> nasceu da paixão por inovação e do amor incondicional pelos animais. Nossa missão é filtrar o mar de novidades tecnológicas e trazer apenas o que realmente faz a diferença na qualidade de vida dos seus pets.</p>
+                <p>Acreditamos que gadgets inteligentes não substituem o afeto, mas liberam tempo e fornecem dados preciosos para que você possa amar e cuidar do seu melhor amigo de forma ainda mais eficiente.</p>
+            </div>
+        </section>
     </main>
 
     <footer class="reveal">
-        <div class="container footer-content">
-            <div class="author-box">
-                <img src="foto-josue.jpg" alt="Josué">
-                <div class="author-info">
-                    <h4>Josué</h4>
-                    <p>Tech Enthusiast & Founder of Guia Pet Tech</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>GUIA PET TECH</h4>
+                    <p style="color: var(--text-dim); font-size: 0.9rem;">Sua fonte número 1 para reviews de tecnologia animal em 2026. Ajudando você a dar o melhor para quem te dá o melhor.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#item-1">Top Reviews</a></li>
+                        <li><a href="#sobre-nos">Sobre Nós</a></li>
+                        <li><a href="#privacy-modal">Política de Privacidade</a></li>
+                        <li><a href="#affiliate-modal">Afiliados</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Autor</h4>
+                    <div class="author-box" style="flex-direction: row; gap: 15px; align-items: center; justify-content: flex-start; text-align: left;">
+                        <img src="foto-josue.jpg" alt="Josué" style="width: 60px; height: 60px;">
+                        <div class="author-info" style="text-align: left;">
+                            <h4 style="margin-bottom: 2px; font-size: 1.1rem;">Josué</h4>
+                            <p style="font-size: 0.8rem;">Tech Enthusiast</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="footer-logo">
-                <p>&copy; 2026 Guia Pet Tech. Pioneirismo no cuidado animal.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Guia Pet Tech. Todos os direitos reservados.</p>
+                <p>Links de afiliados podem gerar comissão.</p>
             </div>
         </div>
     </footer>
@@ -544,40 +248,40 @@
         <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="3" fill="none"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
     </button>
 
-    <script>
-        // Scroll Reveal Logic
-        const reveal = () => {
-            const reveals = document.querySelectorAll(".reveal");
-            for (let i = 0; i < reveals.length; i++) {
-                const windowHeight = window.innerHeight;
-                const elementTop = reveals[i].getBoundingClientRect().top;
-                const elementVisible = 120;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        };
+    <!-- External Script -->
+    <script src="assets/scripts.js"></script>
 
-        window.addEventListener("scroll", reveal);
-        // Initial call
-        setTimeout(reveal, 100);
+    <!-- Modais -->
+    <div class="modal-overlay" id="privacy-modal">
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Fechar">&times;</button>
+            <div class="modal-content">
+                <h2>Política de Privacidade</h2>
+                <p>Sua privacidade é importante para nós. Esta política descreve como o <strong>Guia Pet Tech</strong> lida com informações:</p>
+                <ul>
+                    <li><strong>Cookies:</strong> Utilizamos cookies básicos para melhorar sua experiência de navegação e entender como você interage com nossos reviews.</li>
+                    <li><strong>Dados Pessoais:</strong> Não coletamos nomes ou e-mails a menos que você se inscreva voluntariamente em futuras newsletters.</li>
+                    <li><strong>Segurança:</strong> Aplicamos as melhores práticas de criptografia para garantir que sua jornada em nosso site seja 100% segura.</li>
+                </ul>
+                <p>Ao continuar navegando, você concorda com nossos termos de uso simplificados.</p>
+            </div>
+        </div>
+    </div>
 
-        // Scroll to Top
-        const scrollToTop = () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-
-        document.getElementById('header-top-btn').addEventListener('click', scrollToTop);
-        document.getElementById('floating-top-btn').addEventListener('click', scrollToTop);
-
-        window.addEventListener('scroll', () => {
-            const floatingBtn = document.getElementById('floating-top-btn');
-            if (window.scrollY > 600) {
-                floatingBtn.classList.add('show');
-            } else {
-                floatingBtn.classList.remove('show');
-            }
-        });
-    </script>
+    <div class="modal-overlay" id="affiliate-modal">
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Fechar">&times;</button>
+            <div class="modal-content">
+                <h2>Transparência de Afiliados</h2>
+                <p>Nossa prioridade é a honestidade editorial. Para manter o Guia Pet Tech funcionando gratuitamente, participamos de programas de afiliados:</p>
+                <ul>
+                    <li><strong>Como funciona:</strong> Quando você clica nos links do Mercado Livre e realiza uma compra, podemos receber uma pequena comissão.</li>
+                    <li><strong>Custo para você:</strong> O preço do produto é exatamente o mesmo. Você não paga nada a mais por isso.</li>
+                    <li><strong>Independência:</strong> Nossas recomendações são baseadas em análise técnica e feedback da comunidade, não em parcerias comerciais.</li>
+                </ul>
+                <p>Obrigado por apoiar nosso trabalho de pesquisa!</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
