@@ -108,7 +108,7 @@
                             </div>
                         </div>
                         
-                        <a href="https://meli.la/1tvHFVs?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">
+                        <a href="https://meli.la/1tvHFVs?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank" onclick="registrarVenda()">
                             <span>OFERTA MERCADO LIVRE</span>
                             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="3" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                         </a>
@@ -146,7 +146,7 @@
                             </div>
                         </div>
                         
-                        <a href="https://meli.la/1JBNLej?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">
+                        <a href="https://meli.la/1JBNLej?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank" onclick="registrarVenda()">
                             <span>VER PREÇO EXCLUSIVO</span>
                             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="3" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                         </a>
@@ -166,7 +166,7 @@
                     </div>
                     <div class="details-wrapper">
                         <p>Neutralização total de odores. O carvão ativado combinado com gel de secagem rápida garante que sua casa permaneça impecável.</p>
-                        <a href="https://meli.la/1MqfQtL?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">
+                        <a href="https://meli.la/1MqfQtL?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank" onclick="registrarVenda()">
                             <span>COMBATER ODORES</span>
                             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="3" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                         </a>
@@ -186,7 +186,7 @@
                     </div>
                     <div class="details-wrapper">
                         <p>Diga adeus ao sedentarismo. Este gadget mantém pets ativos por horas com padrões de movimento imprevisíveis e recarga USB.</p>
-                        <a href="https://meli.la/2GYQhkv?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">
+                        <a href="https://meli.la/2GYQhkv?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank" onclick="registrarVenda()">
                             <span>VER NO MERCADO LIVRE</span>
                             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="3" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                         </a>
@@ -206,7 +206,7 @@
                     </div>
                     <div class="details-wrapper">
                         <p>O equilíbrio perfeito entre diversão e descanso. Uma peça de arquitetura felina que protege seus móveis e serve como um santuário seguro.</p>
-                        <a href="https://meli.la/23aYvwL?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank">
+                        <a href="https://meli.la/23aYvwL?utm_source=pinterest&utm_medium=blog&utm_campaign=melhores_acessorios_2026" class="cta-button" target="_blank" onclick="registrarVenda()">
                             <span>PROTEGER MEUS MÓVEIS</span>
                             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="3" fill="none"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                         </a>
@@ -300,5 +300,20 @@
             </div>
         </div>
     </div>
+    <!-- Analytics Tracker -->
+    <script>
+        const trackEvent = (type) => {
+            fetch(`https://api.counterapi.dev/v1/guia_petshop/${type}/up`, { mode: 'no-cors' })
+                .catch(() => {});
+        };
+
+        // Rastreia visita
+        trackEvent('visits');
+
+        // Rastreia venda/interesse
+        function registrarVenda() {
+            trackEvent('sales');
+        }
+    </script>
 </body>
 </html>

@@ -1,8 +1,7 @@
-﻿{
+{
   "github": {
     "silent": false
   },
-  "meta": {
-    "previewPath": "/"
-  }
+  "cleanUrls": true,
+  "trailingSlash": false
 }
