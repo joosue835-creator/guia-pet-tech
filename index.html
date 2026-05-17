@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia Pet Tech | O Seu Marketplace Pet</title>
-    <meta name="description" content="Encontre os melhores produtos tech e de conforto para o seu pet. Comedouros inteligentes, coleiras GPS, camas ortopédicas e muito mais.">
+    <title>Guia Pet Tech | Vitrine de Acessórios & Tecnologia Pet</title>
+    <meta name="description" content="A melhor seleção de produtos inteligentes, tecnologia e conforto para cães e gatos. Curadoria oficial com ofertas exclusivas do Mercado Livre.">
     
     <!-- Open Graph / Redes Sociais -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://guia-pet-tech.vercel.app/">
-    <meta property="og:title" content="Guia Pet Tech | O Seu Marketplace Pet">
-    <meta property="og:description" content="Encontre os melhores produtos tech e de conforto para o seu pet. Comedouros inteligentes, coleiras GPS, camas ortopédicas e muito mais.">
+    <meta property="og:title" content="Guia Pet Tech | Vitrine de Acessórios & Tecnologia Pet">
+    <meta property="og:description" content="A melhor seleção de produtos inteligentes, tecnologia e conforto para cães e gatos. Curadoria oficial com ofertas exclusivas do Mercado Livre.">
     <meta property="og:image" content="https://guia-pet-tech.vercel.app/thumbnail.png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="assets/styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
@@ -24,86 +28,149 @@
             <div class="header-top">
                 <a href="#" class="ml-logo">🐾 GUIA PET TECH</a>
                 <div class="search-bar">
-                    <input type="text" id="search-input" placeholder="Buscar produtos, marcas e muito mais...">
+                    <input type="text" id="search-input" placeholder="Buscar produtos, marcas e muito mais para seu pet...">
                     <span class="search-icon">🔍</span>
                 </div>
             </div>
             <div class="header-bottom">
-                <span>📍 Enviar para todo o Brasil · Frete grátis em milhares de produtos</span>
+                <span>📍 Envio para todo o Brasil · Frete grátis em milhares de produtos</span>
             </div>
         </div>
     </header>
 
-    <!-- CATEGORIAS -->
+    <!-- MENU DE CATEGORIAS -->
     <nav class="category-nav">
-        <ul class="category-list">
-            <li class="category-item active" data-category="all">
-                <span>🏠 Todos</span>
-            </li>
-            <li class="category-item" data-category="tech">
-                <span>⚡ Tecnologia</span>
-            </li>
-            <li class="category-item" data-category="conforto">
-                <span>🛋️ Conforto</span>
-            </li>
-        </ul>
+        <div class="category-nav-container">
+            <ul class="category-list">
+                <li class="category-item active" data-category="all">
+                    <span>🏠 Todos</span>
+                </li>
+                <li class="category-item" data-category="caes">
+                    <span>🐶 Cães</span>
+                </li>
+                <li class="category-item" data-category="gatos">
+                    <span>🐱 Gatos</span>
+                </li>
+                <li class="category-item" data-category="conforto">
+                    <span>🛏️ Conforto</span>
+                </li>
+                <li class="category-item" data-category="brinquedos">
+                    <span>🎾 Brinquedos</span>
+                </li>
+                <li class="category-item" data-category="tecnologia">
+                    <span>🤖 Tecnologia Pet</span>
+                </li>
+            </ul>
+        </div>
     </nav>
 
-    <main>
-        <!-- HERO BANNER -->
-        <div class="hero-banner">
-            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=80" alt="Pet feliz">
-            <div class="hero-overlay">
-                <h2>Tecnologia e conforto<br>para quem você mais ama 🐶</h2>
-                <p>Produtos selecionados com os melhores preços do mercado. Frete grátis e parcelamento sem juros.</p>
+    <main class="main-container">
+        
+        <!-- HERO SECTION COM BANNERS DUPLOS -->
+        <section class="hero-section">
+            <div class="hero-banners-container">
+                <!-- BANNER CÃES -->
+                <div class="hero-banner dog-banner">
+                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80" alt="Produtos para Cães">
+                    <div class="hero-overlay">
+                        <div class="hero-glass-box">
+                            <h2>Os melhores produtos para cães 🐶</h2>
+                            <p>Acessórios, tecnologia e conforto com entrega rápida.</p>
+                            <button class="hero-cta" data-target="caes">Ver Ofertas</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- BANNER GATOS -->
+                <div class="hero-banner cat-banner">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80" alt="Produtos para Gatos">
+                    <div class="hero-overlay">
+                        <div class="hero-glass-box">
+                            <h2>Tudo para o conforto e diversão do seu gato 🐱</h2>
+                            <p>Produtos selecionados com ótimo custo-benefício.</p>
+                            <button class="hero-cta" data-target="gatos">Ver Ofertas</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <!-- TÍTULO DA SEÇÃO -->
-        <h1 class="section-heading" id="section-title">Produtos em Destaque</h1>
-
-        <!-- GRADE DE PRODUTOS -->
-        <div id="product-grid" class="marketplace-grid">
-            <!-- Preenchido via JavaScript -->
+        <!-- CONTAINER DINÂMICO DE PRODUTOS -->
+        <div id="product-area">
+            <!-- TÍTULO DINÂMICO DA SEÇÃO -->
+            <h2 class="section-heading" id="section-title">Produtos em Destaque</h2>
+            
+            <!-- GRADE PRINCIPAL -->
+            <div id="product-grid" class="marketplace-grid">
+                <!-- Preenchido via JavaScript (cards de produtos ou skeletons) -->
+            </div>
         </div>
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER PREMIUM -->
     <footer class="site-footer">
         <div class="footer-top">
+            <!-- Coluna 1: Marca & Como Funciona -->
             <div class="footer-brand">
                 <h3>🐾 Guia Pet Tech</h3>
-                <p>Marketplace curado com os melhores produtos tech e de conforto para cães e gatos. Todos os links direcionam para o Mercado Livre.</p>
+                <p class="brand-desc">Sua vitrine de curadoria pet inteligente. Encontre soluções tecnológicas e ergonômicas selecionadas para melhorar o bem-estar do seu melhor amigo.</p>
+                <div class="footer-info-block">
+                    <h4>COMO FUNCIONA</h4>
+                    <p>O Guia Pet Tech seleciona produtos para cães e gatos disponíveis nos principais marketplaces do Brasil, como Mercado Livre. Nosso objetivo é ajudar tutores a encontrarem produtos úteis, tecnológicos e confortáveis para seus pets.</p>
+                </div>
             </div>
-            <div class="footer-col">
-                <h4>Categorias</h4>
-                <ul>
-                    <li><a href="#" data-cat="tech">Tecnologia</a></li>
-                    <li><a href="#" data-cat="conforto">Conforto</a></li>
+            
+            <!-- Coluna 2: Políticas & Termos -->
+            <div class="footer-col institutional-col">
+                <div class="footer-info-block">
+                    <h4>POLÍTICA DE PRIVACIDADE</h4>
+                    <p>Respeitamos sua privacidade. Alguns links podem gerar comissão através de programas de afiliados sem custo adicional ao usuário.</p>
+                </div>
+                <div class="footer-info-block" style="margin-top: 24px;">
+                    <h4>TERMOS DE USO</h4>
+                    <p>O Guia Pet Tech atua como plataforma de curadoria de produtos pet. Preços e disponibilidade são de responsabilidade dos marketplaces parceiros.</p>
+                </div>
+            </div>
+            
+            <!-- Coluna 3: Navegação rápida -->
+            <div class="footer-col links-col">
+                <h4>CATEGORIAS</h4>
+                <ul class="footer-links">
+                    <li><a href="#" data-cat="all">🏠 Todos os Produtos</a></li>
+                    <li><a href="#" data-cat="caes">🐶 Seção Cães</a></li>
+                    <li><a href="#" data-cat="gatos">🐱 Seção Gatos</a></li>
+                    <li><a href="#" data-cat="conforto">🛏️ Camas & Conforto</a></li>
+                    <li><a href="#" data-cat="brinquedos">🎾 Brinquedos Pet</a></li>
+                    <li><a href="#" data-cat="tecnologia">🤖 Tecnologia Pet</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Sobre</h4>
-                <ul>
-                    <li><a href="#">Como Funciona</a></li>
-                    <li><a href="#">Política de Privacidade</a></li>
-                    <li><a href="#">Termos de Uso</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contato</h4>
-                <ul>
-                    <li><a href="https://br.pinterest.com/guiapettech/?actingBusinessId=856317454056580444" target="_blank" rel="noopener noreferrer">Pinterest</a></li>
+            
+            <!-- Coluna 4: Autor / Contato -->
+            <div class="footer-col author-col">
+                <h4>SOBRE O CURADOR</h4>
+                <div class="author-box">
+                    <img src="foto-josue.jpg" alt="Josué - Curador do Guia Pet Tech" class="author-img">
+                    <div class="author-info">
+                        <span class="author-name">Josué</span>
+                        <span class="author-role">Tech & Pet Enthusiast</span>
+                    </div>
+                </div>
+                <p class="author-desc">Focado em descobrir as melhores novidades que facilitam o cuidado diário de quem tanto amamos.</p>
+                
+                <h4 style="margin-top: 20px;">CONTATO & SOCIAL</h4>
+                <ul class="footer-links">
+                    <li><a href="https://br.pinterest.com/guiapettech/?actingBusinessId=856317454056580444" target="_blank" rel="noopener noreferrer">📌 Pinterest Oficial</a></li>
                 </ul>
             </div>
         </div>
+        
         <div class="footer-bottom">
-            <p>© 2026 Guia Pet Tech · Marketplace de Afiliados · Todos os direitos reservados</p>
+            <p>© 2026 Guia Pet Tech · Vitrine de Afiliados · Todos os direitos reservados</p>
+            <p style="opacity: 0.5; font-size: 0.7rem; margin-top: 4px;">Parceiro do Programa de Afiliados do Mercado Livre. O preço dos produtos não se altera ao utilizar nossos links.</p>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="assets/products.js"></script>
+    <script src="assets/products.js?v=2.0"></script>
     <script src="assets/scripts.js"></script>
 </body>
 </html>
