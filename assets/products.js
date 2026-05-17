@@ -100,7 +100,7 @@ const products = [
         freeShipping: true,
         type: "physical",
         targetPet: "caes",
-        categories: ["caes", "gatos", "tecnologia"],
+        categories: ["caes", "tecnologia"],
         description: "Fonte de água corrente com filtro de carvão ativado e fluxo ajustável. Estimula o pet a beber mais água fresca, purificada e oxigenada."
     },
     {
@@ -158,7 +158,7 @@ const products = [
         name: "Caixa De Areia com Acessórios + Areia Higiênica 4kg",
         price: "R$ 64,90",
         originalPrice: "R$ 79,90",
-        image: "Imagens Gatos/Caixa De Areia P Gato Com Acessórios + Areia Higiênica 4kg.webp",
+        image: "Imagens Gatos/Caixa De Areia com Acessórios + Areia Higiênica 4kg.webp",
         link: "https://meli.la/1BuC7wm",
         badge: "Destaque",
         rating: 4.7,
