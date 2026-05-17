@@ -378,7 +378,7 @@ body {
 .card-badge.destaque {
     background: linear-gradient(135deg, #3483FA 0%, #1E6DE3 100%);
 }
-.card-badge.lançamento {
+.card-badge.lancamento {
     background: linear-gradient(135deg, #00A650 0%, #008744 100%);
 }
 .card-badge.tecnologia-pet {
