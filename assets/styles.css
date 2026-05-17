@@ -372,6 +372,9 @@ body {
 .card-badge.mais-vendido {
     background: linear-gradient(135deg, #FF385C 0%, #D70466 100%);
 }
+.card-badge.mais-procurado {
+    background: linear-gradient(135deg, #FF8C00 0%, #E65C00 100%);
+}
 .card-badge.destaque {
     background: linear-gradient(135deg, #3483FA 0%, #1E6DE3 100%);
 }
